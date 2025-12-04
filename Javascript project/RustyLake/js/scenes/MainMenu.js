@@ -15,8 +15,10 @@ export class MainMenu extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        this.add.image(width / 2, height / 2, 'menu_bg').setOrigin(0.5);
-
+        this.add.image(width / 2, height / 2, 'menu_bg')
+        .setOrigin(0.5)
+        .setDisplaySize(width, height);
+        
        this.add.text(width / 2, height * 0.25, 'SALAM SALAM SALAM', { 
             fontSize: '52px', 
             fill: '#fff',
