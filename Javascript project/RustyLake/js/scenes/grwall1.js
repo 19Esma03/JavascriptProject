@@ -22,46 +22,62 @@ export class GrWall1 extends Phaser.Scene {
 
     create() {
         const { width, height } = this.scale;
-        this.add.image(width / 2, height / 2, 'wall1_duvar');
-        const bed = this.add.image(width * 0.25, height * 0.65, 'wall1_yatak')
-            .setInteractive()
-            .setOrigin(0.5);
-        bed.on('pointerdown', () => this.handleBedClick());
-        const windowImg = this.add.image(width * 0.4, height * 0.3, 'wall1_pencere')
-            .setInteractive()
-            .setOrigin(0.5);
-        windowImg.on('pointerdown', () => this.handleWindowClick());
-        const dresser = this.add.image(width * 0.7, height * 0.65, 'wall1_komidin')
-            .setInteractive()
-            .setOrigin(0.5);
-        dresser.on('pointerdown', () => this.handleDresserClick());
+        this.add.image(width / 2, height / 2, 'wall1_duvar')
+        .setOrigin(0.5)
+        .setDisplaySize(width, height);
+       const Bed = this.add.image(width * 0.25, height / 1.5, 'wall1_yatak')
+            .setOrigin(0.5)
+            .setDisplaySize(250,200)
+            .setInteractive(); // İhtiyaca göre ölçek ayarı
 
-        this.add.image(50, height / 2, 'lArrow')
-            .setInteractive()
-            .on('pointerdown', () => this.scene.start('GrWall4'));
-            
-        this.add.image(width - 50, height / 2, 'rArrow')
-            .setInteractive()
-            .on('pointerdown', () => this.scene.start('GrWall2')); 
+        // 2. Pencere (Ekranın yaklaşık %50'sinde - Ortada)
+        const Window =this.add.image(width * 0.5, height / 3, 'wall1_pencere')
+            .setOrigin(0.5)
+            .setDisplaySize(100,130)
+            .setInteractive(); // İhtiyaca göre ölçek ayarı
+        
+        // 3. Dolap (Ekranın yaklaşık %60'inde)
+        const Commode =this.add.image(width * 0.7, height / 1.75, 'wall1_komidin')
+            .setOrigin(0.5)
+            .setDisplaySize(150,150)
+            .setInteractive(); // İhtiyaca göre ölçek ayarı
 
-        console.log("GrWall1 Sahnesi kuruldu. Tüm objeler ayrı katmanlarda.");
+        // İsteğe bağlı olarak başlık ekleyebilirsiniz:
+        this.add.text(width / 2, height * 0.1, 'ODAM', { 
+            fontSize: '48px', 
+            fill: '#000000'
+        }).setOrigin(0.5);
+
+        this.add.image(width*0.9 , height/2 , 'rArrow')
+        .setOrigin(0.5)
+        .setDisplaySize(20,20)
+        .setInteractive();
+
+         this.add.image(width*0.1 , height/2 , 'lArrow')
+        .setOrigin(0.5)
+        .setDisplaySize(20,20)
+        .setInteractive();
+
+        console.log("GrWall1 Sahnesi kuruldu. Tüm objeler ayri katmanlarda.");
 
     }
 
     HandleBedClick() {
-        // Buraya yatak yakınlaştırma sahnesini çağırın veya bir ipucu metni gösterin.
-        console.log("Yatağa tıklandı. Yatağın altında ne var?");
+        console.log("Yataga tiklandi. Yakinlaştirma sahnesine geciliyor...");
+    // Yeni bir 'BedZoomScene' sahnesi oluşturun.
+        this.scene.start('BedZoomScene');
     }
 
     HandleWindowClick() {
         // Buraya pencere yakınlaştırma sahnesini çağırın.
-        console.log("Pencereye tıklandı. Dışarı bakılıyor...");
+        console.log("Pencereye tiklandi. Disari bakiliyor...");
+        this.scene.start('WindowZoomScene');
     }
 
     HandleDresserClick() {
-        // 💡 Hap Bilgi: Komidine tıklandığında, çekmece/üst kısım bulmacasına yakınlaştıran
-        // yeni bir sahneye geçiş yapın. Bu, Rusty Lake'in temel mekaniğidir.
-        this.scene.start('DresserZoomScene'); // İleride oluşturulacak sahne anahtarı
+        console.log("Komidine tiklandi. Yakinlaştirma sahnesine geciliyor...");
+    //  Sahne geçişi, en basit yakınlaştırma yöntemidir.
+        this.scene.start('DresserZoomScene');
     }
 
 }
