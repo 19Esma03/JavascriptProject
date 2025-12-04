@@ -1,7 +1,7 @@
 // "Every great game begins with a single scene. Let's make this one unforgettable!"
-export class Grwall extends Phaser.Scene {
+export class GrWall2 extends Phaser.Scene {
     constructor() {
-        super('Grwall');
+        super('GrWall2');
     }
 
     init() {

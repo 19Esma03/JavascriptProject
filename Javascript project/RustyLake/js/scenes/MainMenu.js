@@ -1,45 +1,43 @@
-export class Start extends Phaser.Scene {
+import { GrWall1 } from './grwall1.js';
+
+export class MainMenu extends Phaser.Scene {
 
     constructor() {
-        super('Start');
+        super('MainMenu');
     }
 
     preload() {
-        this.load.image('background', 'assets/space.png');
-        this.load.image('logo', 'assets/phaser.png');
+        this.load.image('menu_bg', '../assets/images/beyaz.jpg');
+        this.load.image('play_btn', '../assets/images/play_btn.jpg');
 
-        //  The ship sprite is CC0 from https://ansimuz.itch.io - check out his other work!
-        this.load.spritesheet('ship', 'assets/spaceship.png', { frameWidth: 176, frameHeight: 96 });
     }
 
     create() {
-        this.background = this.add.tileSprite(640, 360, 1280, 720, 'background');
+        const { width, height } = this.scale;
 
-        const logo = this.add.image(640, 200, 'logo');
+        this.add.image(width / 2, height / 2, 'menu_bg').setOrigin(0.5);
 
-        const ship = this.add.sprite(640, 360, 'ship');
+       this.add.text(width / 2, height * 0.25, 'SALAM SALAM SALAM', { 
+            fontSize: '52px', 
+            fill: '#fff',
+            fontFamily: 'Arial',
+            shadow: { offsetX: 2, offsetY: 2, color: '#000000', blur: 4, fill: true }
+        }).setOrigin(0.5);
+        const playButton = this.add.image(width / 2, height * 0.75, 'play_btn')
+            .setInteractive()
+            .setScale(1);
 
-        ship.anims.create({
-            key: 'fly',
-            frames: this.anims.generateFrameNumbers('ship', { start: 0, end: 2 }),
-            frameRate: 15,
-            repeat: -1
-        });
+        playButton.on('pointerover', () => playButton.setTint(0xaaaaaa));
+        playButton.on('pointerout', () => playButton.setTint(0xffffff));
 
-        ship.play('fly');
 
-        this.tweens.add({
-            targets: logo,
-            y: 400,
-            duration: 1500,
-            ease: 'Sine.inOut',
-            yoyo: true,
-            loop: -1
+       playButton.on('pointerdown', () => {
+            // 💡 Hap Bilgi: Tıklanınca oyunun ana sahnesini başlat.
+            this.scene.start('GrWall1'); 
+            // Menu sahnesini durdurarak kaynaklarını serbest bırak.
+            this.scene.stop('MainMenu');
         });
     }
 
-    update() {
-        this.background.tilePositionX += 2;
-    }
     
 }
