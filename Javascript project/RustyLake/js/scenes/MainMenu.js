@@ -33,10 +33,8 @@ export class MainMenu extends Phaser.Scene {
         playButton.on('pointerout', () => playButton.setTint(0xffffff));
 
 
-       playButton.on('pointerdown', () => {
-            // 💡 Hap Bilgi: Tıklanınca oyunun ana sahnesini başlat.
+       playButton.on('pointerdown', () => { 
             this.scene.start('GrWall1'); 
-            // Menu sahnesini durdurarak kaynaklarını serbest bırak.
             this.scene.stop('MainMenu');
         });
     }
