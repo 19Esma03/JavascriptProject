@@ -1,4 +1,5 @@
 import { GrWall1 } from './grwall1.js';
+import puzzle from './puzzle.js';
 
 export class MainMenu extends Phaser.Scene {
 
