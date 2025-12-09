@@ -40,9 +40,9 @@ export default class SlidingPuzzle extends Phaser.Scene {
     }  
 
 // YORUM SATIRI BAŞTAN TEKRAR YAZ
+/*
 
-
-  /*  createPuzzle() {
+   createPuzzle() {
         for (let r = 0; r < this.rows; r++) {
             this.pieces[r] = [];
             for (let c = 0; c < this.cols; c++) {
@@ -190,5 +190,4 @@ export default class SlidingPuzzle extends Phaser.Scene {
             text.on('pointerdown', () => this.scene.restart());
         }
     }
-}
-*/
+} */
