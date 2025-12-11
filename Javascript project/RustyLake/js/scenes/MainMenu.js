@@ -42,3 +42,27 @@ export class MainMenu extends Phaser.Scene {
 
     
 }
+/* import PuzzleScene from './scenes/puzzle.js';
+
+const config = {
+    type: Phaser.AUTO,
+    width: 600,
+    height: 600,
+    backgroundColor: '#D6C1A6',
+
+    // ek önemli ayarları yukarı yazabiliyoruz.
+    
+    
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+    // Scale ekranı ortalıyor
+    // Import ettiğimiz sahneleri buraya ekleyerek çalıştırabiliyoruz. 
+    scene: PuzzleScene 
+
+    
+};
+
+// oyun bununla başlıyor. 
+const game = new Phaser.Game(config);  */
