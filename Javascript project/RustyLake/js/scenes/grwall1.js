@@ -1,5 +1,6 @@
 // "Every great game begins with a single scene. Let's make this one unforgettable!"
 import { GrWall2 } from './grwall2.js';
+import { GrWall4 } from './grwall4.js';
 
 export class GrWall1 extends Phaser.Scene {
     constructor() {
@@ -55,39 +56,27 @@ export class GrWall1 extends Phaser.Scene {
             fill: '#000000'
         }).setOrigin(0.5);
 
-        this.add.image(width*0.9 , height/2 , 'rArrow')
+        const Rarrow =this.add.image(width*0.9 , height/2 , 'rArrow')
         .setOrigin(0.5)
         .setDisplaySize(20,20)
         .setInteractive();
 
-         this.add.image(width*0.1 , height/2 , 'lArrow')
+        const Larrow= this.add.image(width*0.1 , height/2 , 'lArrow')
         .setOrigin(0.5)
         .setDisplaySize(20,20)
         .setInteractive();
+
+        Rarrow.on('pointerdown',( )=>{
+             this.scene.start('GrWall2');
+        });
+
+        Larrow.on('pointerdown',( )=>{
+             this.scene.start('GrWall4');
+        });
 
         console.log("GrWall1 Sahnesi kuruldu. Tüm objeler ayri katmanlarda.");
 
     }
 
-    HandleBedClick() {
-        console.log("Yataga tiklandi. Yakinlaştirma sahnesine geciliyor...");
-    // Yeni bir 'BedZoomScene' sahnesi oluşturun.
-        this.scene.start('BedZoomScene');
-    }
-
-    HandleWindowClick() {
-        // Buraya pencere yakınlaştırma sahnesini çağırın.
-        console.log("Pencereye tiklandi. Disari bakiliyor...");
-        this.scene.start('WindowZoomScene');
-    }
-
-    HandleDresserClick() {
-        console.log("Komidine tiklandi. Yakinlaştirma sahnesine geciliyor...");
-    //  Sahne geçişi, en basit yakınlaştırma yöntemidir.
-        this.scene.start('DresserZoomScene');
-    }
-    HandleLibClick(){
-        
-    }
 
 }
