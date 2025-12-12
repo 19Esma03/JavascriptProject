@@ -11,10 +11,11 @@ export class GrWall1 extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('wall1_duvar', '/assets/images/beyaz.jpg');
-        this.load.image('wall1_yatak', '/assets/images/ytk_karsi.jpg');
-        this.load.image('wall1_pencere', '/assets/images/pencere.jpg');
-        this.load.image('wall1_komidin', '/assets/images/k_dolap.png');
+        this.load.image('wall1_duvar', '/assets/images/wall.png');
+        this.load.image('wall1_yatak', '/assets/images/bed_next.png');
+        this.load.image('wall1_pencere', '/assets/images/window.png');
+        this.load.image('wall1_komidin', '/assets/images/commode.png');
+        this.load.image('wall1_kitaplik', '/assets/images/lib.png');
 
         this.load.image('lArrow', '/assets/images/lArrow.jpg');
         this.load.image('rArrow', '/assets/images/rArrow.jpg');
@@ -25,22 +26,28 @@ export class GrWall1 extends Phaser.Scene {
         this.add.image(width / 2, height / 2, 'wall1_duvar')
         .setOrigin(0.5)
         .setDisplaySize(width, height);
-       const Bed = this.add.image(width * 0.25, height / 1.5, 'wall1_yatak')
+       const Bed = this.add.image(width * 0.44, height / 2.1, 'wall1_yatak')
             .setOrigin(0.5)
-            .setDisplaySize(250,200)
+            .setDisplaySize(850,450)
             .setInteractive(); // İhtiyaca göre ölçek ayarı
 
         // 2. Pencere (Ekranın yaklaşık %50'sinde - Ortada)
-        const Window =this.add.image(width * 0.5, height / 3, 'wall1_pencere')
+        const Window =this.add.image(width * 0.4, height / 2.5, 'wall1_pencere')
             .setOrigin(0.5)
-            .setDisplaySize(100,130)
+            .setDisplaySize(600,300)
             .setInteractive(); // İhtiyaca göre ölçek ayarı
         
         // 3. Dolap (Ekranın yaklaşık %60'inde)
-        const Commode =this.add.image(width * 0.7, height / 1.75, 'wall1_komidin')
+        const Commode =this.add.image(width * 0.5, height / 1.9, 'wall1_komidin')
             .setOrigin(0.5)
-            .setDisplaySize(150,150)
+            .setDisplaySize(750,400)
             .setInteractive(); // İhtiyaca göre ölçek ayarı
+
+        const Lib =this.add.image(width * 0.5, height / 1.9, 'wall1_kitaplik')
+            .setOrigin(0.5)
+            .setDisplaySize(750,400)
+            .setInteractive(); // İhtiyaca göre ölçek ayarı
+
 
         // İsteğe bağlı olarak başlık ekleyebilirsiniz:
         this.add.text(width / 2, height * 0.1, 'ODAM', { 
@@ -78,6 +85,9 @@ export class GrWall1 extends Phaser.Scene {
         console.log("Komidine tiklandi. Yakinlaştirma sahnesine geciliyor...");
     //  Sahne geçişi, en basit yakınlaştırma yöntemidir.
         this.scene.start('DresserZoomScene');
+    }
+    HandleLibClick(){
+        
     }
 
 }

@@ -8,7 +8,7 @@ export class MainMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('menu_bg', '../assets/images/beyaz.jpg');
+        this.load.image('menu_bg', '../assets/images/menu_bg.jpg');
         this.load.image('play_btn', '../assets/images/play_btn.jpg');
 
     }
