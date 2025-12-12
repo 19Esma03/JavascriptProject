@@ -30,15 +30,13 @@ export class GrWall3 extends Phaser.Scene {
        const Desktop = this.add.image(width * 0.47, height / 1.95, 'wall3_kapi')
             .setOrigin(0.5)
             .setDisplaySize(850,400)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
+            .setInteractive();
 
         // 3. Dolap (Ekranın yaklaşık %60'inde)
         const Draws =this.add.image(width * 0.47, height / 1.95, 'wall3_paravan')
             .setOrigin(0.5)
             .setDisplaySize(800,400)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
-
-ı
+            .setInteractive(); 
 
         const Rarrow =this.add.image(width*0.9 , height/2 , 'rArrow')
         .setOrigin(0.5)
