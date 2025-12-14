@@ -10,6 +10,7 @@ import {DresserZoomScene} from '/js/scenes/DresserZoomScene.js';
 import {DoorZoomScene} from '/js/scenes/DoorZoomScene.js';
 import {DesktopZoomScene} from '/js/scenes/DesktopZoomScene.js';
 import {DrawingsZoomScene} from '/js/scenes/DrawingsZoomScene.js';
+import {WindowZoomScene} from '/js/scenes/WindowZoomScene.js';
 
 
 const config = {
@@ -19,7 +20,7 @@ const config = {
     parent: 'game-container', 
     
     
-    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4,BedZoomScene,LibraryZoomScene,CommodeZoomScene,DoorZoomScene,DesktopZoomScene,DresserZoomScene,DrawingsZoomScene], 
+    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4,BedZoomScene,LibraryZoomScene,CommodeZoomScene,DoorZoomScene,DesktopZoomScene,DresserZoomScene,DrawingsZoomScene,WindowZoomScene], 
     
     scale: {
         mode: Phaser.Scale.FIT,
