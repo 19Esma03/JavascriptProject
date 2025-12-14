@@ -16,11 +16,13 @@ import {WindowZoomScene} from '/js/scenes/WindowZoomScene.js';
 const config = {
     type: Phaser.AUTO,
     width: 800, 
-    height: 400, 
-    parent: 'game-container', 
+    height: 500, 
+    backgroundColor: "#000000",
+    parent: "game-container",
+    dom: { createContainer: true }, 
     
     
-    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4,BedZoomScene,LibraryZoomScene,CommodeZoomScene,DoorZoomScene,DesktopZoomScene,DresserZoomScene,DrawingsZoomScene,WindowZoomScene], 
+    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4,BedZoomScene,LibraryZoomScene,CommodeZoomScene,DoorZoomScene,DesktopZoomScene,DresserZoomScene,DrawingsZoomScene,WindowZoomScene,MomRoom, MomRoom2], 
     
     scale: {
         mode: Phaser.Scale.FIT,
