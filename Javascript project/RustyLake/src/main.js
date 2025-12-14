@@ -3,6 +3,13 @@ import { GrWall1 } from '../js/scenes/grwall1.js';
 import { GrWall2 } from '../js/scenes/grwall2.js';
 import { GrWall3 } from '../js/scenes/grwall3.js';
 import { GrWall4 } from '../js/scenes/grwall4.js';
+import {BedZoomScene} from '/js/scenes/BedZoomScene.js';
+import {LibraryZoomScene} from '/js/scenes/LibraryZoomScene.js';
+import {CommodeZoomScene} from '/js/scenes/CommodeZoomScene.js';
+import {DresserZoomScene} from '/js/scenes/DresserZoomScene.js';
+import {DoorZoomScene} from '/js/scenes/DoorZoomScene.js';
+import {DesktopZoomScene} from '/js/scenes/DesktopZoomScene.js';
+import {DrawingsZoomScene} from '/js/scenes/DrawingsZoomScene.js';
 
 
 const config = {
@@ -12,7 +19,7 @@ const config = {
     parent: 'game-container', 
     
     
-    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4], 
+    scene: [MainMenu, GrWall1, GrWall2, GrWall3, GrWall4,BedZoomScene,LibraryZoomScene,CommodeZoomScene,DoorZoomScene,DesktopZoomScene,DresserZoomScene,DrawingsZoomScene], 
     
     scale: {
         mode: Phaser.Scale.FIT,
