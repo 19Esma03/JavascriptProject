@@ -33,8 +33,8 @@ export class BedZoomScene extends Phaser.Scene {
         });
 
         if (!inventory.ayicik) {
-            const ayicik= this.add.image(width*0.1, height*0.8, 'ayicik')
-                .setDisplaySize(90,100)
+            const ayicik= this.add.image(width*0.5, height*0.8, 'ayicik')
+                .setDisplaySize(150,200)
                 .setInteractive();
 
             ayicik.on('pointerdown', () => {
