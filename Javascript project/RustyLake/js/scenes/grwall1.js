@@ -1,6 +1,11 @@
 // "Every great game begins with a single scene. Let's make this one unforgettable!"
 import { GrWall2 } from './grwall2.js';
 import { GrWall4 } from './grwall4.js';
+import {BedZoomScene} from './BedZoomScene.js';
+import {LibraryZoomScene} from './LibraryZoomScene.js';
+import {CommodeZoomScene} from './CommodeZoomScene.js';
+import { inventory } from './inventory.js';
+
 
 export class GrWall1 extends Phaser.Scene {
     constructor() {
@@ -18,6 +23,8 @@ export class GrWall1 extends Phaser.Scene {
         this.load.image('wall1_komidin', '/assets/images/commode.png');
         this.load.image('wall1_kitaplik', '/assets/images/lib.png');
 
+        this.load.image('ayicik', '/assets/images/Bear.png');
+
         this.load.image('lArrow', '/assets/images/lArrow.jpg');
         this.load.image('rArrow', '/assets/images/rArrow.jpg');
     }
@@ -27,34 +34,28 @@ export class GrWall1 extends Phaser.Scene {
         this.add.image(width / 2, height / 2, 'wall1_duvar')
         .setOrigin(0.5)
         .setDisplaySize(width, height);
-       const Bed = this.add.image(width * 0.44, height / 2.1, 'wall1_yatak')
+       const Bed = this.add.image(width * 0.14, height / 1.22, 'wall1_yatak')
             .setOrigin(0.5)
-            .setDisplaySize(850,450)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
+            .setDisplaySize(250,190)
+            .setInteractive(); 
 
-        // 2. Pencere (Ekranın yaklaşık %50'sinde - Ortada)
-        const Window =this.add.image(width * 0.4, height / 2.5, 'wall1_pencere')
-            .setOrigin(0.5)
-            .setDisplaySize(600,300)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
         
-        // 3. Dolap (Ekranın yaklaşık %60'inde)
-        const Commode =this.add.image(width * 0.5, height / 1.9, 'wall1_komidin')
+        const Window =this.add.image(width * 0.4, height / 2, 'wall1_pencere')
             .setOrigin(0.5)
-            .setDisplaySize(750,400)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
-
-        const Lib =this.add.image(width * 0.5, height / 1.9, 'wall1_kitaplik')
+            .setDisplaySize(220,110)
+            .setInteractive(); 
+        
+        
+        const Commode =this.add.image(width * 0.41, height / 1.22, 'wall1_komidin')
             .setOrigin(0.5)
-            .setDisplaySize(750,400)
-            .setInteractive(); // İhtiyaca göre ölçek ayarı
+            .setDisplaySize(100,170)
+            .setInteractive(); 
 
+        const Lib =this.add.image(width * 0.87, height / 1.38, 'wall1_kitaplik')
+            .setOrigin(0.5)
+            .setDisplaySize(150,270)
+            .setInteractive(); 
 
-        // İsteğe bağlı olarak başlık ekleyebilirsiniz:
-        this.add.text(width / 2, height * 0.1, 'ODAM', { 
-            fontSize: '48px', 
-            fill: '#000000'
-        }).setOrigin(0.5);
 
         const Rarrow =this.add.image(width*0.9 , height/2 , 'rArrow')
         .setOrigin(0.5)
@@ -66,6 +67,23 @@ export class GrWall1 extends Phaser.Scene {
         .setDisplaySize(20,20)
         .setInteractive();
 
+        const ayicik= this.add.image(width*0.1, height*0.8, 'ayicik')
+            .setDisplaySize(90,100);
+        if (inventory.ayicik) {
+            ayicik.destroy();
+        }
+
+       Bed.on('pointerdown',( )=>{
+            this.scene.start('BedZoomScene');
+       });
+       Commode.on('pointerdown',( )=>{
+            this.scene.start('CommodeZoomScene');
+       });
+       Lib.on('pointerdown',( )=>{
+            this.scene.start('LibraryZoomScene');
+       });
+
+
         Rarrow.on('pointerdown',( )=>{
              this.scene.start('GrWall2');
         });
@@ -75,7 +93,8 @@ export class GrWall1 extends Phaser.Scene {
         });
 
         console.log("GrWall1 Sahnesi kuruldu. Tüm objeler ayri katmanlarda.");
-
+       
+        this.scene.get('UIScene').scene.setVisible(true);
     }
 
 

@@ -29,17 +29,17 @@ export class MomRoom2 extends Phaser.Scene {
 
   preload() {
     //Sahnenin arkaplan resmini yüklüyoruz.
-    this.load.image("MomsRoom2Image", "assets/MomsRoom2Image.png");
-    this.load.image("BagWithNote", "assets/BagWithNote.png");
-    this.load.image("BedsideTableZoomImage", "assets/BedsideTableZoomImage.png");
-    this.load.image("BedZoomImage", "assets/BedZoomImage.png");    
-    this.load.image("CarpetZoomImage", "assets/CarpetZoomImage.png");
-    this.load.image("ClockWithNote", "assets/ClockWithNote.png");
-    this.load.image("PaintWithNote", "assets/PaintWithNote.png");
-    this.load.image("PaperZoomImage", "assets/PaperZoomImage.png");
-    this.load.image("MusicBoxZoomImage", "assets/MusicBoxZoomImage.png");
-    this.load.image("WardrobeZoomImage", "assets/WardrobeZoomImage.png");
-    this.load.image("WindowZoomImage", "assets/WindowZoomImage.png");
+    this.load.image("MomsRoom2Image", "assets/images/MomsRoom2Image.png");
+    this.load.image("BagWithNote", "assets/images/BagWithNote.png");
+    this.load.image("BedsideTableZoomImage", "assets/images/BedsideTableZoomImage.png");
+    this.load.image("BedZoomImage", "assets/images/BedZoomImage.png");    
+    this.load.image("CarpetZoomImage", "assets/images/CarpetZoomImage.png");
+    this.load.image("ClockWithNote", "assets/images/ClockWithNote.png");
+    this.load.image("PaintWithNote", "assets/images/PaintWithNote.png");
+    this.load.image("PaperZoomImage", "assets/images/PaperZoomImage.png");
+    this.load.image("MusicBoxZoomImage", "assets/images/MusicBoxZoomImage.png");
+    this.load.image("WardrobeZoomImage", "assets/images/WardrobeZoomImage.png");
+    this.load.image("WindowZoomImage", "assets/images/WindowZoomImage.png");
 
     // Sesler dosyalarını yüklüyoruz.
     this.load.audio("Noise", "assets/noise.mp3");

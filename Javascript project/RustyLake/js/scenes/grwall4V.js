@@ -1,41 +1,34 @@
-import { GrWall4 } from './grwall4.js';
-import { GrWall2 } from './grwall2.js';
-import { inventory } from './inventory.js';
 // "Every great game begins with a single scene. Let's make this one unforgettable!"
-
-
-export class GrWall3 extends Phaser.Scene {
+import {MomRoom} from './MomRoom.js';
+export class GrWall4V extends Phaser.Scene {
     constructor() {
-        super('GrWall3');
+        super('GrWall4V');
     }
 
     init() {
         // Initialize scene
     }
 
-    preload() {
-        this.load.image('wall3_duvar', '/assets/images/wall.png');
-        this.load.image('wall3_kapi', '/assets/images/door.png');
-        this.load.image('wall3_paravan', '/assets/images/dressing.png');
-
-        this.load.image('elbise', '/assets/images/shadow.png');
-
+    preload()  {
+        this.load.image('wall_duvar', '/assets/images/wall.png');
+        this.load.image('wall_kapi', '/assets/images/Open_Door.png');
+        this.load.image('wall_paravan', '/assets/images/dressing.png');
         this.load.image('lArrow', '/assets/images/lArrow.jpg');
         this.load.image('rArrow', '/assets/images/rArrow.jpg');
     }
 
     create() {
-       const { width, height } = this.scale;
-        this.add.image(width / 2, height / 2, 'wall3_duvar')
+         const { width, height } = this.scale;
+        this.add.image(width / 2, height / 2, 'wall_duvar')
         .setOrigin(0.5)
         .setDisplaySize(width, height);
-       const Door = this.add.image(width * 0.48, height / 1.5, 'wall3_kapi')
+       const Door = this.add.image(width * 0.48, height / 1.5, 'wall_kapi')
             .setOrigin(0.5)
-            .setDisplaySize(150,300)
+            .setDisplaySize(250,280)
             .setInteractive();
 
         
-        const Dresser =this.add.image(width * 0.82, height / 1.45, 'wall3_paravan')
+        const Dresser =this.add.image(width * 0.82, height / 1.45, 'wall_paravan')
             .setOrigin(0.5)
             .setDisplaySize(150,280)
             .setInteractive(); 
@@ -50,16 +43,9 @@ export class GrWall3 extends Phaser.Scene {
         .setDisplaySize(20,20)
         .setInteractive();
 
-         const elbise = this.add.image(width*0.77, height*0.52, 'elbise')
-                .setDisplaySize(90,150);
-
-        if (inventory.elbise) {
-            elbise.destroy();
-        }
-
         Door.on('pointerdown',( )=>{
-            this.scene.start('DoorZoomScene');
-       });
+            this.scene.start('MomRoom');
+        });
        
        Dresser.on('pointerdown',( )=>{
             this.scene.start('DresserZoomScene');
@@ -77,6 +63,5 @@ export class GrWall3 extends Phaser.Scene {
         console.log("GrWall3 Sahnesi kuruldu. Tüm objeler ayri katmanlarda.");
        
     }
-    
 
 }

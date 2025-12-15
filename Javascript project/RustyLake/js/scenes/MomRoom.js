@@ -12,17 +12,17 @@ export class MomRoom extends Phaser.Scene {
 
   preload() {
     // Resimleri yüklüyoruz.
-    this.load.image("MomsRoomImage", "assets/MomsRoomImage.png");//(key,dosya_yolu) parametreler
-    this.load.image("BagZoomImage", "assets/BagZoomImage.png");
-    this.load.image("BedsideTableZoomImage", "assets/BedsideTableZoomImage.png");
-    this.load.image("BedZoomImage", "assets/BedZoomImage.png");    
-    this.load.image("CarpetZoomImage", "assets/CarpetZoomImage.png");
-    this.load.image("ClockZoomImage", "assets/ClockZoomImage.png");
-    this.load.image("PaintZoomImage", "assets/PaintZoomImage.png");
-    this.load.image("PaperZoomImage", "assets/PaperZoomImage.png");
-    this.load.image("MusicBoxZoomImage", "assets/MusicBoxZoomImage.png");
-    this.load.image("WardrobeZoomImage", "assets/WardrobeZoomImage.png");
-    this.load.image("WindowZoomImage", "assets/WindowZoomImage.png");
+    this.load.image("MomsRoomImage", "assets/images/MomsRoomImage.png");//(key,dosya_yolu) parametreler
+    this.load.image("BagZoomImage", "assets/images/BagZoomImage.png");
+    this.load.image("BedsideTableZoomImage", "assets/images/BedsideTableZoomImage.png");
+    this.load.image("BedZoomImage", "assets/images/BedZoomImage.png");    
+    this.load.image("CarpetZoomImage", "assets/images/CarpetZoomImage.png");
+    this.load.image("ClockZoomImage", "assets/images/ClockZoomImage.png");
+    this.load.image("PaintZoomImage", "assets/images/PaintZoomImage.png");
+    this.load.image("PaperZoomImage", "assets/images/PaperZoomImage.png");
+    this.load.image("MusicBoxZoomImage", "assets/images/MusicBoxZoomImage.png");
+    this.load.image("WardrobeZoomImage", "assets/images/WardrobeZoomImage.png");
+    this.load.image("WindowZoomImage", "assets/images/WindowZoomImage.png");
   }
 
   create() {
