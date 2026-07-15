@@ -61,18 +61,6 @@ export class GrWall2 extends Phaser.Scene {
         .setDisplaySize(20,20)
         .setInteractive();
        
-        if (!inventory.defter) {
-            const defter = this.add.image(width*0.6, height*0.6, 'defter')
-                .setDisplaySize(60,60)
-                .setInteractive();
-
-            defter.on('pointerdown', () => {
-                 inventory.defter = true;
-                defter.destroy();
-                    
-                 this.game.events.emit('updateInventory'); 
-            });
-        }
        Desktop.on('pointerdown',( )=>{
             this.scene.start('DesktopZoomScene');
        });
@@ -85,7 +73,7 @@ export class GrWall2 extends Phaser.Scene {
             this.scene.start('WindowZoomScene');
        });
 
-        Rarrow.on('pointerdown',( )=>{
+      Rarrow.on('pointerdown',( )=>{
              this.scene.start('GrWall3');
         });
 

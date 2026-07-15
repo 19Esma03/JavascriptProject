@@ -128,7 +128,7 @@ export  class SlidingPuzzle extends Phaser.Scene {
     shufflePuzzle() {
         let lastMovedPiece = null;
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             const neighbors = [];
             const r = this.emptySlot.row;
             const c = this.emptySlot.col;
@@ -202,7 +202,7 @@ export  class SlidingPuzzle extends Phaser.Scene {
                 alpha: 0.85, 
                 duration: 800
             });
-
+            
             this.tweens.add({
                 targets: fullImage,
                 scale: this.startScale * 1.2,
@@ -212,7 +212,7 @@ export  class SlidingPuzzle extends Phaser.Scene {
                     this.showWinText(width, height);
                 }
             });
-            this.scene.start('GrWall4V');
+            
         }
     }
 
@@ -240,5 +240,6 @@ export  class SlidingPuzzle extends Phaser.Scene {
         text.on('pointerdown', () => {
             this.scene.restart();
         });
+        this.scene.start('GrWall4V');
     }
 }

@@ -42,8 +42,8 @@ export class MomRoom2 extends Phaser.Scene {
     this.load.image("WindowZoomImage", "assets/images/WindowZoomImage.png");
 
     // Sesler dosyalarını yüklüyoruz.
-    this.load.audio("Noise", "assets/noise.mp3");
-    this.load.audio("Lullaby", "assets/lullaby.mp3");
+    this.load.audio("Noise", "assets/images/noise.mp3");
+    this.load.audio("Lullaby", "assets/images/lullaby.mp3");
   }
 
   

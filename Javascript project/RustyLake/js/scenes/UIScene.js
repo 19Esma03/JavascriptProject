@@ -34,7 +34,6 @@ export class UIScene extends Phaser.Scene {
 
             if (inventory[item.key]) {
                 collectedCount++;
-                // Üstünü çiz
                 const line = this.add.line(0, 0, text.x, text.y + 10, text.x + 100, text.y + 10, 0xff0000).setOrigin(0);
                 this.container.add(line);
             }
@@ -43,6 +42,7 @@ export class UIScene extends Phaser.Scene {
       
         if (collectedCount === items.length) {
             this.showFinalTable();
+            this.finalGroup.destroy();
         }
     }
 

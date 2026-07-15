@@ -11,9 +11,9 @@ export class DresserZoomScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('komidin', '/assets/images/Commode.png');
+        this.load.image('komidin', '/assets/images/Paravan_Zoom.png');
         this.load.image('dArrow', '/assets/images/dArrow.jpg');
-        this.load.image('elbise', '/assets/images/blood.png');
+        this.load.image('elbisek', '/assets/images/blood.png');
 
     }
 
@@ -35,8 +35,8 @@ export class DresserZoomScene extends Phaser.Scene {
         });
 
         if (!inventory.elbise) {
-            const elbise = this.add.image(width*0.77, height*0.52, 'elbise')
-                .setDisplaySize(90,150)
+            const elbise = this.add.image(width*0.5, height*0.19, 'elbisek')
+                .setDisplaySize(250,350)
                 .setInteractive();
 
             elbise.on('pointerdown', () => {
